@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64B5F6"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="220" fill="#FAFAFA"/>
+
+  <!-- Step 1: Input Files -->
+  <g transform="translate(30, 30)">
+    <rect x="0" y="0" width="200" height="160" rx="12" fill="#E3F2FD" filter="url(#shadow)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565C0">Your Receipts</text>
+
+    <!-- Folder icon -->
+    <g transform="translate(70, 45)">
+      <path d="M0 15 L0 70 L60 70 L60 15 L35 15 L30 5 L0 5 Z" fill="#90CAF9" stroke="#1565C0" stroke-width="1.5"/>
+      <text x="30" y="90" text-anchor="middle" font-family="monospace" font-size="10" fill="#424242">reimbursements/</text>
+      <text x="30" y="105" text-anchor="middle" font-family="monospace" font-size="9" fill="#616161">center_a/*.png</text>
+      <text x="30" y="118" text-anchor="middle" font-family="monospace" font-size="9" fill="#616161">center_b/*.pdf</text>
+      <text x="30" y="131" text-anchor="middle" font-family="monospace" font-size="9" fill="#616161">...</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -->
+  <line x1="240" y1="110" x2="310" y2="110" stroke="#64B5F6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="275" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">Upload</text>
+
+  <!-- Step 2: AI Processing -->
+  <g transform="translate(320, 30)">
+    <rect x="0" y="0" width="200" height="160" rx="12" fill="#FFF3E0" filter="url(#shadow)"/>
+    <text x="100" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E65100">AI Analysis</text>
+
+    <!-- Robot/AI icon -->
+    <g transform="translate(65, 45)">
+      <circle cx="35" cy="25" r="22" fill="#FFB74D" stroke="#E65100" stroke-width="2"/>
+      <circle cx="27" cy="20" r="5" fill="#FFFFFF"/>
+      <circle cx="43" cy="20" r="5" fill="#FFFFFF"/>
+      <circle cx="27" cy="20" r="2" fill="#424242"/>
+      <circle cx="43" cy="20" r="2" fill="#424242"/>
+      <path d="M25 32 Q35 40 45 32" stroke="#424242" stroke-width="2" fill="none"/>
+      <rect x="10" y="55" width="50" height="8" rx="2" fill="#FFB74D"/>
+    </g>
+
+    <text x="100" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">Categorizes items</text>
+    <text x="100" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">Extracts totals</text>
+    <text x="100" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#424242">Flags for review</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <line x1="530" y1="110" x2="600" y2="110" stroke="#64B5F6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="565" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">Generate</text>
+
+  <!-- Step 3: Output Files -->
+  <g transform="translate(610, 30)">
+    <rect x="0" y="0" width="260" height="160" rx="12" fill="#E8F5E9" filter="url(#shadow)"/>
+    <text x="130" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">Your Results</text>
+
+    <!-- PDF icons -->
+    <g transform="translate(20, 45)">
+      <!-- snacks.pdf -->
+      <rect x="0" y="0" width="45" height="55" rx="3" fill="#FFCC80" stroke="#F57C00" stroke-width="1.5"/>
+      <path d="M30 0 L45 15 L30 15 Z" fill="#FFE0B2" stroke="#F57C00" stroke-width="1"/>
+      <text x="22" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#E65100">PDF</text>
+      <text x="22" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#424242">snacks.pdf</text>
+
+      <!-- supplies.pdf -->
+      <rect x="55" y="0" width="45" height="55" rx="3" fill="#90CAF9" stroke="#1565C0" stroke-width="1.5"/>
+      <path d="M85 0 L100 15 L85 15 Z" fill="#BBDEFB" stroke="#1565C0" stroke-width="1"/>
+      <text x="77" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#0D47A1">PDF</text>
+      <text x="77" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#424242">supplies.pdf</text>
+    </g>
+
+    <!-- Excel icon -->
+    <g transform="translate(150, 45)">
+      <rect x="0" y="0" width="55" height="55" rx="3" fill="#C8E6C9" stroke="#388E3C" stroke-width="1.5"/>
+      <rect x="8" y="12" width="40" height="8" fill="#81C784"/>
+      <rect x="8" y="24" width="40" height="8" fill="#A5D6A7"/>
+      <rect x="8" y="36" width="40" height="8" fill="#81C784"/>
+      <text x="28" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#424242">summary.xlsx</text>
+    </g>
+
+    <text x="130" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#616161">Items flagged for review</text>
+    <text x="130" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#616161">are highlighted in Excel</text>
+  </g>
+</svg>
