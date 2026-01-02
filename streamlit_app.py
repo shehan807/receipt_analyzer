@@ -67,10 +67,14 @@ st.markdown("""
 
 
 def load_svg_workflow():
-    """Load and return the SVG workflow diagram."""
+    """Load and return the SVG workflow diagram as base64 for display."""
+    import base64
     svg_path = Path(__file__).parent / "assets" / "workflow.svg"
     if svg_path.exists():
-        return svg_path.read_text()
+        svg_content = svg_path.read_text()
+        # Encode as base64 for reliable rendering
+        b64 = base64.b64encode(svg_content.encode()).decode()
+        return f'<img src="data:image/svg+xml;base64,{b64}" style="width: 100%; max-width: 900px;">'
     return None
 
 
