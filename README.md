@@ -16,7 +16,7 @@ Upload a ZIP file of receipt images/PDFs organized by center, and the app will:
 
 ## Live Demo
 
-Try it now: [receipt-analyzer.streamlit.app](https://receipt-analyzer.streamlit.app) *(update with your actual URL)*
+Try it now: [rapid-receiptsanalyzer.streamlit.app](https://rapid-receiptsanalyzer.streamlit.app)
 
 ## Input Format
 

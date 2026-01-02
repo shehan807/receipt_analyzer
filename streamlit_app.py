@@ -157,6 +157,7 @@ def aggregate_statistics(results: list[ProcessingResult]) -> dict:
             'amount': sum(r.total for r in result.receipts),
             'needs_review': sum(1 for r in result.receipts if r.needs_review),
             'errors': len(result.errors),
+            'error_messages': result.errors,  # Store actual error messages
         }
         stats['center_details'].append(center_stats)
 
@@ -434,18 +435,31 @@ def main():
                 for center in stats['center_details']:
                     review_text = ""
                     if center['needs_review'] > 0:
-                        review_text = f" - ⚠️ {center['needs_review']} need review"
+                        review_text = f" · ⚠️ {center['needs_review']} need review"
 
-                    error_text = ""
+                    # Show success or error status
                     if center['errors'] > 0:
-                        error_text = f" - ❌ {center['errors']} errors"
+                        status_icon = "❌"
+                        status_color = "#dc3545"
+                    else:
+                        status_icon = "✓"
+                        status_color = "#28a745"
 
                     st.markdown(
                         f"""<div class="center-breakdown">
-                        <strong>{center['name']}</strong>: {center['receipts']} receipts (${center['amount']:,.2f}){review_text}{error_text}
+                        <span style="color: {status_color}; font-weight: bold;">{status_icon}</span>
+                        <strong>{center['name']}</strong>: {center['receipts']} receipts (${center['amount']:,.2f}){review_text}
                         </div>""",
                         unsafe_allow_html=True,
                     )
+
+                    # Show error details if any
+                    if center['error_messages']:
+                        for err in center['error_messages']:
+                            # Truncate long error messages and make them readable
+                            short_err = err.split("'message':")[1].split("}")[0] if "'message':" in err else err
+                            short_err = short_err[:100] + "..." if len(short_err) > 100 else short_err
+                            st.caption(f"    ↳ {short_err.strip()}")
 
         except zipfile.BadZipFile:
             st.error("❌ The uploaded file is not a valid ZIP file. Please try again.")

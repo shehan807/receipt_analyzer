@@ -15,8 +15,9 @@ from models import BoundaryInfo, Confidence
 
 logger = logging.getLogger(__name__)
 
-# Maximum image size for Claude API (5MB)
-MAX_IMAGE_SIZE = 5 * 1024 * 1024  # 5MB in bytes
+# Maximum image size for Claude API (5MB limit on base64)
+# Base64 encoding adds ~33% overhead, so raw size must be ~3.7MB to stay under 5MB encoded
+MAX_IMAGE_SIZE = int(5 * 1024 * 1024 * 0.74)  # ~3.7MB raw to stay under 5MB base64
 MAX_IMAGE_DIMENSION = 7500  # Claude limit is 8000, leave margin
 
 # Increase PIL's decompression bomb limit
